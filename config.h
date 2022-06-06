@@ -1,23 +1,26 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 7.5;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static unsigned int gappx          = 7;        /* gaps between windows */
+static unsigned int borderpx        = 1;
+static unsigned int snap            = 32;
+static int showbar                  = 1;
+static int topbar                   = 1;
 static const int focusonwheel       = 0;
 static const char *fonts[]          = { "monospace:size=20" };
 static const char dmenufont[]       = "monospace:size=20";
-static const char col_gray1[]       = "#262b31";
-static const char col_gray2[]       = "#323841";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_peach[]        = "#7d6161"; 
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_peach,  col_peach  },
+
+static char col_1_bg[]              = "#febebf"; /* Main (Peach) */
+static char col_1_fg[]              = "#262b31"; 
+static char col_1_br[]              = "#febebf"; /* Border */
+static char col_2_bg[]              = "#333941"; /* Gray */
+static char col_2_fg[]              = "#febebf"; 
+static char col_2_br[]              = "#333941";
+
+static char *colors[][3] = {
+       /*               fg           bg           border   */
+       [SchemeNorm] = { col_2_fg,    col_2_bg,    col_2_br },
+       [SchemeSel]  = { col_1_fg,    col_1_bg,    col_1_br },
 };
 
 /* tagging */
@@ -34,9 +37,9 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static int nmaster     = 1;    /* number of clients in master area */
+static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -58,8 +61,29 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_peach, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_2_bg, "-nf", col_2_fg, "-sb", col_1_bg, "-sf", col_1_fg, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+
+/*
+* Xresources preferences to load at startup
+*/
+
+ResourcePref resources[] = {
+		{ "col_1_fg",           STRING,  &col_1_fg },
+		{ "col_1_bg",           STRING,  &col_1_bg },
+		{ "col_1_br",           STRING,  &col_1_br },
+		{ "col_2_fg",           STRING,  &col_2_fg },
+		{ "col_2_bg",           STRING,  &col_2_bg },
+		{ "col_2_br",           STRING,  &col_2_br },
+	  { "gappx",              INTEGER, &gappx },
+		{ "borderpx",          	INTEGER, &borderpx },
+		{ "snap",          		  INTEGER, &snap },
+		{ "showbar",          	INTEGER, &showbar },
+		{ "topbar",          	  INTEGER, &topbar },
+		{ "nmaster",          	INTEGER, &nmaster },
+		{ "resizehints",       	INTEGER, &resizehints },
+		{ "mfact",      	 	    FLOAT,   &mfact },
+};
 
 // Blossom Patches
 #include "blossom-patches/c_files/shiftview.c"
