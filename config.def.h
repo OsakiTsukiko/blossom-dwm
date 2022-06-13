@@ -10,12 +10,12 @@ static const int focusonwheel       = 0;
 static const char *fonts[]          = { "monospace:size=20" };
 static const char dmenufont[]       = "monospace:size=20";
 
-static char col_1_bg[]              = "#febebf"; /* Main (Peach) */
-static char col_1_fg[]              = "#262b31"; 
-static char col_1_br[]              = "#febebf"; /* Border */
-static char col_2_bg[]              = "#333941"; /* Gray */
-static char col_2_fg[]              = "#febebf"; 
-static char col_2_br[]              = "#333941";
+static char col_1_bg[]              = "#9f2121"; /* Main (Peach) */
+static char col_1_fg[]              = "#ecdbda"; 
+static char col_1_br[]              = "#9f2121"; /* Border */
+static char col_2_bg[]              = "#ecdbda"; /* Gray */
+static char col_2_fg[]              = "#9f2121"; 
+static char col_2_br[]              = "#d3988c";
 
 static char *colors[][3] = {
        /*               fg           bg           border   */
