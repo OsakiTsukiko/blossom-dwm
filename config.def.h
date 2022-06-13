@@ -7,8 +7,8 @@ static unsigned int snap            = 32;
 static int showbar                  = 1;
 static int topbar                   = 1;
 static const int focusonwheel       = 0;
-static const char *fonts[]          = { "monospace:size=20" };
-static const char dmenufont[]       = "monospace:size=20";
+static const char *fonts[]          = { "monospace:size=15" };
+static const char dmenufont[]       = "monospace:size=15";
 
 static char col_1_bg[]              = "#9f2121"; /* Main (Peach) */
 static char col_1_fg[]              = "#ecdbda"; 
