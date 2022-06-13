@@ -1,6 +1,6 @@
-# Povy Lonux flavored blossom-dwm
-### basically dwm with some minor patches
+# Povy Linux flavored blossom-dwm
+#### basically dwm with some minor patches
 
-<ing src="100%" src="https://raw.githubusercontent.com/povy-linux/povy-wm/master/showcase/firefox.png">
-<ing src="100%" src="https://raw.githubusercontent.com/povy-linux/povy-wm/master/showcase/mit.png">
-<ing src="100%" src="https://raw.githubusercontent.com/povy-linux/povy-wm/master/showcase/empty.png">
+<img width="100%" src="https://raw.githubusercontent.com/povy-linux/povy-wm/master/showcase/firefox.png">
+<img width="100%" src="https://raw.githubusercontent.com/povy-linux/povy-wm/master/showcase/mit.png">
+<img width="100%" src="https://raw.githubusercontent.com/povy-linux/povy-wm/master/showcase/empty.png">
