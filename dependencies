@@ -1,0 +1,12 @@
+# USE
+dmenu # app launcher
+ttf-roboto-mono # fonts
+alacritty # terminal
+picom # compositor
+maim # screenshots
+asla-utils # audio
+pulseaudio # audio
+
+# BUILD
+git
+make
